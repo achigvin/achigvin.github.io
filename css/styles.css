@@ -534,6 +534,57 @@ a {
     display: inline-flex;
 }
 
+/* === COMPETENCIES SECTION === */
+.section-competencies {
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-hover) 100%);
+}
+
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.competency-card {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-6);
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+.competency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), transparent);
+}
+
+.competency-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(183, 28, 53, 0.15);
+}
+
+.competency-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+.competency-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
 /* === SOFT SKILLS RAIL === */
 .soft-skills-rail {
     overflow: hidden;
@@ -652,6 +703,11 @@ a {
 
 .badge-private {
     background: #9d4edd;
+    color: white;
+}
+
+.badge-university {
+    background: #4a9eff;
     color: white;
 }
 
