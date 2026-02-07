@@ -1,48 +1,224 @@
-# My Portfolio
+# Alena Chigvintseva – Portfolio
 
-Welcome to my personal portfolio website. This project is a work in progress, and I am actively developing it to showcase my skills and projects.
+**Software Engineer • 42 Berlin • Systems + Web**
 
-## Current Structure
+A modern, minimalist portfolio website showcasing systems programming expertise (C, Unix), full-stack development, and thesis research in medical AI.
 
-The project currently has the following structure:
+---
 
-## Planned Structure and Features
+## 🎯 Features
 
-### Planned Structure
+- **Semantic HTML & Accessibility**: Proper heading hierarchy, ARIA labels, keyboard navigation, focus management
+- **Dark-first Design**: Professional dark theme with red accent (#e84855) inspired by the attached photo
+- **Mobile-responsive**: Works flawlessly from 360px (mobile) to 4K screens
+- **Data-driven Content**: Projects and skills stored in modular JS files for easy future updates
+- **Performance**: Vanilla HTML/CSS/JS, no framework bloat, optimized images, lazy loading
+- **Scroll Spy Navigation**: Active nav link highlights based on current section
+- **Expandable Project Details**: Native `<details>` elements for "View More" functionality
 
-1. **Home**
-    - Header with navigation (Home, About Me, Skills, Projects, Contact & Resume), fixed
-    - Introduction with name, role (developer and student), and a professional photo
-2. **About**
-    - Section with a brief bio, education, and extra involvements
-3. **Skills**
-    - Skills represented visually 
-4. **Projects**
-    - Categorized into sections:
-        - Web Applications
-        - Algorithms and Utilities
-        - Data Analysis, Visualization, and Databases 
-5. **Contact & Resume**
-    - Contact form (probably)
-    - Resume download link
-    - Contact information (email, phone, social networks)
+---
 
-### Planned Features
+## 📁 Project Structure
 
-- Custom cursor
-- Links to the German language version of the website
-- Adjusting for mobile version and other screen size
+```
+.
+├── index.html              # Semantic HTML scaffold
+├── css/
+│   └── styles.css         # Design system + responsive layout
+├── js/
+│   └── main.js            # Scroll spy, accessibility, utilities
+├── content/
+│   ├── projects.js        # Featured + 42 Berlin projects data
+│   └── skills.js          # Skills grouped by category
+├── images/
+│   └── avatar.jpg         # Profile photo
+└── README.md              # This file
+```
 
-## Technologies Used
+---
 
-- **HTML:** For the structure of the website.
-- **CSS:** For styling and layout.
-- **JavaScript:** For interactivity and dynamic content (inside HTML file as script).
+## 🛠️ Tech Stack
 
-## Contributing
+- **HTML5**: Semantic markup with proper heading hierarchy
+- **CSS3**: Custom properties, Flexbox, Grid, mobile-first media queries
+- **JavaScript (Vanilla)**: ES6+, no dependencies
+  - Scroll spy using IntersectionObserver
+  - Keyboard accessibility enhancements
+  - Image lazy loading
 
-I welcome contributions to this project. If you have any suggestions or improvements, please create an issue or submit a pull request.
+---
 
-## Contact
+## 🚀 Getting Started
 
-Feel free to reach out to me at al.chigvintseva@gmail.com
+### Local Development
+
+```bash
+# Navigate to repo
+cd personal-portfolio-website
+
+# Start local server (Python 3)
+python -m http.server 8000
+
+# Open browser
+# http://localhost:8000
+```
+
+### Live Demo
+
+Visit: https://chigvintseva.github.io/personal-portfolio-website/
+
+---
+
+## 📝 Content Management
+
+### Adding a New Project
+
+Edit `content/projects.js` and add to the appropriate object:
+
+```javascript
+{
+    id: 'my-project',
+    title: 'Project Name',
+    summary: 'One-line summary',
+    tags: ['Tech1', 'Tech2'],
+    outcome: 'Optional outcome/impact',
+    links: {
+        github: 'https://github.com/...',
+        demo: 'https://demo.com'
+    },
+    details: [
+        { heading: 'Section', points: ['Bullet 1', 'Bullet 2'] }
+    ]
+}
+```
+
+Run the site – content renders automatically via `renderFeaturedProjects()`.
+
+### Adding Skills
+
+Edit `content/skills.js` and add to category:
+
+```javascript
+frontend: [
+    { name: 'Framework Name', icon: '⚡' }
+]
+```
+
+---
+
+## ♿ Accessibility
+
+- ✅ Semantic HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
+- ✅ Skip-to-content link
+- ✅ Keyboard-navigable (Tab, Enter, Space for `<details>`)
+- ✅ Visible focus states (blue outline)
+- ✅ Proper heading hierarchy (h1 → h2 → h3)
+- ✅ Alt text on images
+- ✅ Color contrast ≥ 4.5:1 (WCAG AA standard)
+
+---
+
+## 📱 Responsive Breakpoints
+
+- **Mobile (360–640px)**: Single column, optimized touch targets (44px+)
+- **Tablet (641–1024px)**: Two columns, adjusted typography
+- **Desktop (1025px+)**: Full layout, rich spacing
+
+---
+
+## 🎨 Design Tokens
+
+### Colors
+
+```css
+--color-bg: #0f0f0f;            /* Dark background */
+--color-surface: #1a1a1a;       /* Card background */
+--color-accent: #e84855;        /* Red highlight */
+--color-text: #e5e5e5;          /* Main text */
+--color-text-muted: #a0a0a0;    /* Secondary text */
+```
+
+### Spacing
+
+All spacing uses `--space-*` tokens (4px base unit):
+- `--space-4` = 1rem
+- `--space-8` = 2rem
+- `--space-16` = 4rem
+- etc.
+
+---
+
+## 🔍 SEO & Performance
+
+- **Meta tags**: Title, description, OpenGraph for social sharing
+- **Favicon**: Inline SVG with initials "AC"
+- **Images**: Lazy loading via `loading="lazy"` attribute
+- **No tracking**: Privacy-focused (no analytics/cookies)
+- **Lighthouse target**: ≥ 90 on all metrics
+
+---
+
+## 🚢 Deployment
+
+### GitHub Pages (Recommended)
+
+1. Ensure `index.html` is in root
+2. Go to Settings → Pages → Source: main branch, root folder
+3. Deploy automatically on push
+
+```bash
+git push origin main
+```
+
+Site goes live at: `https://<username>.github.io/<repo-name>/`
+
+### Netlify (Alternative)
+
+1. Connect repo
+2. Build command: (leave blank)
+3. Publish directory: `/`
+4. Deploy
+
+---
+
+## ✅ Pre-Launch Checklist
+
+- [ ] All external links tested and working
+- [ ] Images optimized and loading correctly
+- [ ] Mobile view tested on real device (or DevTools 360px mode)
+- [ ] Keyboard navigation working (Tab through nav, expand details)
+- [ ] Color contrast checked (use WebAIM tool)
+- [ ] Form/email links functional
+- [ ] OG tags tested (share link on Twitter/LinkedIn)
+- [ ] Lighthouse score ≥ 90 on all metrics
+- [ ] Load time < 2s on 4G network
+- [ ] No console errors in DevTools
+
+---
+
+## 🔐 Privacy & Security
+
+- No external analytics (no tracking)
+- No cookies set
+- mailto: links are client-side only
+- CV/transcripts not publicly accessible
+- Thesis content summarized only (code private)
+
+---
+
+## 📧 Contact
+
+- Email: al.chigvintseva@gmail.com
+- GitHub: https://github.com/chigvintseva
+- LinkedIn: https://linkedin.com/in/alena-chigvintseva
+
+---
+
+## 📄 License
+
+This portfolio is personal and not licensed for reuse. Feel free to use it as inspiration for your own portfolio, but please do not copy the content or design directly.
+
+---
+
+**Last updated**: Feb 2026  
+**Built with**: ❤️ and vanilla HTML/CSS/JS
