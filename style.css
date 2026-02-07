@@ -509,42 +509,63 @@ nav .fas{
     display: none;
 }
 @media only screen and (max-width: 600px){
+    .container{
+        padding: 10px 5%;
+    }
     #sidemenu{
         margin-top: -10px;
         margin-right: -20px;
+        padding: 5px;
     }
     #header{
         background-image: url(images&resume/margin-right-10px.png);
+        padding: 10px;
     }
     .header-text{
         margin-top: 22%;
+        font-size: 18px;
+        flex-basis: 100%;
     }
     .header-text h1{
-        font-size: 55px;
+        font-size: 45px;
+        margin-top: 10%;
     }
     .header-text h1 span{
-        color: #fda01f;
+        color: #ff004f;
     }
     .header-text p{
-        font-size: 18px;
+        font-size: 16px;
     }
     .header-text p span{
-        font-size: 15px;
+        font-size: 14px;
     }    
+    .header-photo {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    .header-photo img{
+        width: 100%;
+    }
     .social-icons a{
-       font-size: 50px;
+       font-size: 40px;
+       margin-right: 10px;
+    }
+    .go-projects{
+        margin-left: 0;
     }
     .go-projects a{
-        font-size: 17px;
+        font-size: 15px;
         margin-bottom: 30px;
-        margin-top: 50px;
+        margin-top: 30px;
+        padding: 8px 15px;
     }
     nav .fas{
         display: block;
         font-size:25px;
     }
     nav ul{
-        background: #fda01f;
+        background: #ff004f;
         position: fixed;
         top: 0;
         right: -200px;
@@ -558,6 +579,10 @@ nav .fas{
         display: block;
         margin: 25px;
     }
+    nav ul li a{
+        font-size: 16px;
+        color: #fff;
+    }
     nav ul .fas{
         position: absolute;
         top: 25px;
@@ -565,7 +590,10 @@ nav .fas{
         cursor: pointer;
     }
     .skills-row{
-        display: contents;
+        flex-direction: column;
+    }
+    .skills-column1, .skills-column2 {
+        flex: 1;
     }
     .fa-solid.fa-bars {
         display: block;
@@ -576,10 +604,13 @@ nav .fas{
         cursor: pointer;
     }
     nav ul li a::after{
-        background: #01192a;
+        background: #fff;
     }
     .sub-title{
-        font-size: 40px;
+        font-size: 35px;
+    }
+    .sub-sub-title{
+        font-size: 24px;
     }
     .about-column1, .about-column2{
         flex-basis: 100%;
@@ -589,13 +620,75 @@ nav .fas{
     }
     .about-column2{
         font-size: 14px;
+        flex-basis: 100%;
     }
     .tab-links{
-        font-size: 16px;
-        margin-right: 20px;
+        font-size: 14px;
+        margin-right: 15px;
+    }
+    .tab-contents ul li{
+        margin: 8px 0;
+        line-height: 1.2;
+    }
+    .sub-row {
+        grid-template-columns: 20% 80%;
+        padding: 10px;
+        margin-bottom: 8px;
+        gap: 2px;
+    }
+    .icon {
+        font-size: 40px;
+    }
+    .text {
+        padding: 8px;
+    }
+    .text h2{
+        font-size: 15px;
+    }
+    .text p{
+        font-size: 12px;
+    }
+    .work-list{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .work {
+        min-height: 250px;
+    }
+    .layer{
+        padding: 0 20px;
+    }
+    .data-work-list{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .data-work {
+        padding: 15px;
+    }
+    .data-work h2 {
+        font-size: 18px;
+    }
+    .data-work p {
+        font-size: 14px;
     }
     .contact-row{
-        display: contents;
+        flex-direction: column;
     }
-
+    .contact-left {
+        flex-basis: 100%;
+    }
+    .contact-right {
+        flex-basis: 100%;
+    }
+    .contact-left p{
+        font-size: 16px;
+    }
+    .contact-text{
+        font-size: 16px;
+    }
+    form input, form textarea {
+        padding: 12px;
+        margin: 10px 0;
+        font-size: 16px;
+    }
 }
