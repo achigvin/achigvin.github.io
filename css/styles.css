@@ -461,34 +461,66 @@ a {
 .section-skills {
     padding-top: var(--space-20);
     padding-bottom: var(--space-20);
+    background: linear-gradient(180deg, transparent 0%, rgba(183, 28, 53, 0.05) 50%, transparent 100%);
+}
+
+.section-skills .section-subtitle {
+    margin-bottom: var(--space-16);
+    text-align: center;
 }
 
 .skill-category {
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-20);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .skill-category-label {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
     color: var(--color-accent);
     margin-bottom: var(--space-6);
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* === SKILL RAILS (lukres-inspired) === */
+.skill-category-label::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+/* === SKILL RAILS (Infinite Loop Animation) === */
 .skill-rail {
     overflow: hidden;
     background: var(--color-surface);
     border-radius: var(--border-radius-lg);
-    padding: var(--space-3);
-    border: 1px solid var(--color-border);
+    padding: var(--space-4);
+    border: 2px solid var(--color-border);
+    transition: all var(--transition-slow);
+    position: relative;
+}
+
+.skill-rail:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px rgba(183, 28, 53, 0.15);
 }
 
 .skill-track {
     display: flex;
-    gap: var(--space-2);
-    animation: marquee 30s linear infinite;
-    padding: var(--space-2);
+    gap: var(--space-3);
+    animation: marquee 40s linear infinite;
+    will-change: transform;
 }
 
 .skill-rail:hover .skill-track {
@@ -497,36 +529,37 @@ a {
 
 @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - var(--space-2))); }
+    100% { transform: translateX(calc(-50% - 12px)); }
 }
 
 .skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-1);
-    padding: var(--space-2) var(--space-4);
-    background: var(--color-surface-hover);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: linear-gradient(135deg, rgba(183, 28, 53, 0.1) 0%, rgba(183, 28, 53, 0.05) 100%);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--border-radius-md);
     white-space: nowrap;
-    flex-shrink: 0;
-    transition: var(--transition);
-    opacity: 0.7;
     font-size: var(--font-size-sm);
     font-weight: 500;
+    color: var(--color-text);
+    transition: all var(--transition);
+    cursor: default;
+    flex-shrink: 0;
 }
 
 .skill-rail:hover .skill-chip {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .skill-rail:hover .skill-chip:hover {
     opacity: 1;
-    background: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent) 0%, rgba(183, 28, 53, 0.8) 100%);
     color: white;
     border-color: var(--color-accent);
-    transform: scale(1.1) translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(183, 28, 53, 0.3);
 }
 
 .chip-icon {

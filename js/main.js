@@ -4,14 +4,24 @@
    Smooth Interactions | Accessibility | Mouse Tracking
    ================================================== */
 
-// === MOUSE CURSOR TRACKING GRADIENT ===
+// === MOUSE CURSOR TRACKING GRADIENT (Desktop Only) ===
+let mouseGradientEnabled = window.innerWidth > 768; // Only on desktop
+
 document.addEventListener('mousemove', (e) => {
+    // Skip on mobile for performance
+    if (!mouseGradientEnabled) return;
+    
     const x = e.clientX;
     const y = e.clientY;
     
-    // Create a subtle gradient circle effect
-    const gradient = `radial-gradient(circle 500px at ${x}px ${y}px, rgba(183, 28, 53, 0.08), transparent 80%)`;
+    // Create an optimized gradient circle effect with better colors
+    const gradient = `radial-gradient(circle 600px at ${x}px ${y}px, rgba(183, 28, 53, 0.06), transparent 80%)`;
     document.documentElement.style.background = gradient;
+});
+
+// Disable gradient on small screens
+window.addEventListener('resize', () => {
+    mouseGradientEnabled = window.innerWidth > 768;
 });
 
 // === MOBILE MENU HANDLER ===
