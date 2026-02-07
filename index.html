@@ -3,154 +3,760 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alena Chigvintseva - Full-Stack Developer, 42 Berlin, Systems & Web. Building reliable, performant software.">
-    <meta property="og:title" content="Alena Chigvintseva - Full-Stack Developer">
-    <meta property="og:description" content="Systems engineer & full-stack developer specializing in C, Unix, and modern web technologies.">
+    <meta name="description" content="Alena Chigvintseva — Software Engineer. Systems + Web. 42 Berlin. Building reliable, high-performance software.">
+    <meta property="og:title" content="Alena Chigvintseva — Software Engineer">
+    <meta property="og:description" content="Systems engineer & full-stack developer specializing in C, Unix, and modern web technologies. Big Data & AI focus.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chigvintseva.github.io/personal-portfolio-website/">
-    <meta property="og:image" content="https://chigvintseva.github.io/personal-portfolio-website/images/avatar.jpg">
+    <meta property="og:image" content="https://chigvintseva.github.io/personal-portfolio-website/images/avatar.webp">
     
-    <title>Alena Chigvintseva - Full-Stack Developer, 42 Berlin</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%23B71C35'>AC</text></svg>">
+    <title>Alena Chigvintseva — Software Engineer, 42 Berlin</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230f0f0f' width='100' height='100'/><text y='70' x='50' font-size='55' font-weight='bold' fill='%23B71C35' text-anchor='middle'>AC</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- === HEADER === -->
+    <!-- === HEADER / NAVIGATION === -->
     <header id="header" class="header">
-        <nav class="nav" aria-label="Main navigation">
-            <div class="nav-brand">AC</div>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#languages" class="nav-link">Languages</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <a href="#hero" class="nav-brand" aria-label="Alena Chigvintseva">AC</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#languages" class="nav-link">Languages</a></li>
+                    <li><a href="#soft-skills" class="nav-link">Soft Skills</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+                <span class="hamburger"></span>
+            </button>
+            
+            <!-- Mobile Navigation -->
+            <nav id="nav-mobile" class="nav-mobile" aria-label="Mobile navigation">
+                <ul class="nav-links-mobile">
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#languages" class="nav-link">Languages</a></li>
+                    <li><a href="#soft-skills" class="nav-link">Soft Skills</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main" class="main">
-        <!-- === HERO === -->
+        <!-- === HERO SECTION === -->
         <section id="hero" class="hero">
+            <div class="hero-bg"></div>
             <div class="hero-content">
-                <img src="images/avatar.jpg" alt="Alena Chigvintseva" class="hero-avatar" loading="lazy">
-                <h1 class="hero-title">Alena Chigvintseva</h1>
-                <p class="hero-tagline">Full-Stack Developer • 42 Berlin • Systems + Web</p>
-                <div class="hero-cta">
-                    <a href="https://github.com/chigvintseva" class="btn btn-primary" aria-label="GitHub profile">GitHub</a>
-                    <a href="https://linkedin.com/in/alena-chigvintseva" class="btn btn-primary" aria-label="LinkedIn profile">LinkedIn</a>
-                    <a href="mailto:al.chigvintseva@gmail.com" class="btn btn-email" aria-label="Send email"><span class="email-envelope">✉</span> <span class="email-text">Email</span></a>
+                <div class="hero-text">
+                    <h1 class="hero-title">Alena Chigvintseva</h1>
+                    <p class="hero-role">Software Engineer • 42 Berlin • Systems + Web</p>
+                    <p class="hero-tagline">
+                        I build reliable, high-performance software across the full stack. Specialized in C, Unix systems programming, and modern web technologies. 
+                        Currently advancing a thesis in Big Data Analytics and AI.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="hero-socials">
+                        <a href="#" class="social-link github-link" aria-label="GitHub profile" title="ADD LINK">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="#" class="social-link linkedin-link" aria-label="LinkedIn profile" title="ADD LINK">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.424-.103.25-.129.599-.129.949v5.432h-3.554s.05-8.81 0-9.728h3.554v1.375c.427-.66 1.19-1.599 2.898-1.599 2.117 0 3.704 1.385 3.704 4.362v5.59zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.708 0-.956.768-1.71 1.963-1.71 1.192 0 1.914.756 1.939 1.71 0 .95-.746 1.708-1.987 1.708zm-1.65 11.597h3.299V9.579H3.687v10.873zM22.224 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.002z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+                
+                <!-- Optional Hero Image (subtle) -->
+                <div class="hero-image">
+                    <img src="images/avatar.webp" alt="Alena Chigvintseva" class="avatar-image">
                 </div>
             </div>
         </section>
 
-        <!-- === ABOUT === -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">About</h2>
-                <p class="section-text">
-                    I'm a software engineer with strong fundamentals in C, Unix systems, and algorithms from 42 Berlin. 
-                    I build reliable, performance-oriented software across the stack—from low-level systems programming 
-                    to modern web interfaces. Specialized in Big Data Analytics and AI through my thesis work.
-                </p>
-            </div>
-        </section>
-
-        <!-- === SKILLS === -->
-        <section id="skills" class="section">
+        <!-- === SKILLS SECTION === -->
+        <section id="skills" class="section section-skills">
             <div class="container">
                 <h2 class="section-title">Skills</h2>
-                <div id="skills-container" class="skills-grid">
+                <p class="section-subtitle">A quick overview of the tools I use day-to-day.</p>
+                
+                <!-- Frontend Skills Rail -->
+                <div class="skill-category">
+                    <h3 class="skill-category-label">Frontend</h3>
+                    <div class="skill-rail">
+                        <div class="skill-track">
+                            <div class="skill-chip"><span class="chip-icon">🌐</span>HTML5</div>
+                            <div class="skill-chip"><span class="chip-icon">🎨</span>CSS3</div>
+                            <div class="skill-chip"><span class="chip-icon">✨</span>JavaScript</div>
+                            <div class="skill-chip"><span class="chip-icon">📘</span>TypeScript</div>
+                            <div class="skill-chip"><span class="chip-icon">📱</span>Responsive Design</div>
+                            
+                            <!-- Duplicate for seamless loop -->
+                            <div class="skill-chip"><span class="chip-icon">🌐</span>HTML5</div>
+                            <div class="skill-chip"><span class="chip-icon">🎨</span>CSS3</div>
+                            <div class="skill-chip"><span class="chip-icon">✨</span>JavaScript</div>
+                            <div class="skill-chip"><span class="chip-icon">📘</span>TypeScript</div>
+                            <div class="skill-chip"><span class="chip-icon">📱</span>Responsive Design</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Systems Skills Rail -->
+                <div class="skill-category">
+                    <h3 class="skill-category-label">Systems</h3>
+                    <div class="skill-rail">
+                        <div class="skill-track">
+                            <div class="skill-chip"><span class="chip-icon">⚙️</span>C</div>
+                            <div class="skill-chip"><span class="chip-icon">⚙️</span>C++</div>
+                            <div class="skill-chip"><span class="chip-icon">🐧</span>Unix/Linux</div>
+                            <div class="skill-chip"><span class="chip-icon">💾</span>Memory Management</div>
+                            <div class="skill-chip"><span class="chip-icon">🔄</span>Processes & Threads</div>
+                            <div class="skill-chip"><span class="chip-icon">🔍</span>Debugging</div>
+                            
+                            <!-- Duplicate for seamless loop -->
+                            <div class="skill-chip"><span class="chip-icon">⚙️</span>C</div>
+                            <div class="skill-chip"><span class="chip-icon">⚙️</span>C++</div>
+                            <div class="skill-chip"><span class="chip-icon">🐧</span>Unix/Linux</div>
+                            <div class="skill-chip"><span class="chip-icon">💾</span>Memory Management</div>
+                            <div class="skill-chip"><span class="chip-icon">🔄</span>Processes & Threads</div>
+                            <div class="skill-chip"><span class="chip-icon">🔍</span>Debugging</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tooling Skills Rail -->
+                <div class="skill-category">
+                    <h3 class="skill-category-label">Tooling</h3>
+                    <div class="skill-rail">
+                        <div class="skill-track">
+                            <div class="skill-chip"><span class="chip-icon">🐙</span>Git/GitHub</div>
+                            <div class="skill-chip"><span class="chip-icon">💬</span>VS Code</div>
+                            <div class="skill-chip"><span class="chip-icon">🖥️</span>Terminal</div>
+                            <div class="skill-chip"><span class="chip-icon">🐳</span>Docker</div>
+                            <div class="skill-chip"><span class="chip-icon">✔️</span>Unit Testing</div>
+                            <div class="skill-chip"><span class="chip-icon">🎯</span>Agile/Scrum</div>
+                            
+                            <!-- Duplicate for seamless loop -->
+                            <div class="skill-chip"><span class="chip-icon">🐙</span>Git/GitHub</div>
+                            <div class="skill-chip"><span class="chip-icon">💬</span>VS Code</div>
+                            <div class="skill-chip"><span class="chip-icon">🖥️</span>Terminal</div>
+                            <div class="skill-chip"><span class="chip-icon">🐳</span>Docker</div>
+                            <div class="skill-chip"><span class="chip-icon">✔️</span>Unit Testing</div>
+                            <div class="skill-chip"><span class="chip-icon">🎯</span>Agile/Scrum</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data/Analytics Skills Rail -->
+                <div class="skill-category">
+                    <h3 class="skill-category-label">Data & Analytics</h3>
+                    <div class="skill-rail">
+                        <div class="skill-track">
+                            <div class="skill-chip"><span class="chip-icon">🐍</span>Python</div>
+                            <div class="skill-chip"><span class="chip-icon">📊</span>pandas</div>
+                            <div class="skill-chip"><span class="chip-icon">🔢</span>numpy</div>
+                            <div class="skill-chip"><span class="chip-icon">📈</span>scikit-learn</div>
+                            <div class="skill-chip"><span class="chip-icon">🎨</span>matplotlib</div>
+                            <div class="skill-chip"><span class="chip-icon">🗄️</span>SQL</div>
+                            
+                            <!-- Duplicate for seamless loop -->
+                            <div class="skill-chip"><span class="chip-icon">🐍</span>Python</div>
+                            <div class="skill-chip"><span class="chip-icon">📊</span>pandas</div>
+                            <div class="skill-chip"><span class="chip-icon">🔢</span>numpy</div>
+                            <div class="skill-chip"><span class="chip-icon">📈</span>scikit-learn</div>
+                            <div class="skill-chip"><span class="chip-icon">🎨</span>matplotlib</div>
+                            <div class="skill-chip"><span class="chip-icon">🗄️</span>SQL</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- === PROJECTS === -->
+        <!-- === PROJECTS SECTION === -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Featured work, 42 Berlin fundamentals, and academic projects</p>
+                <p class="section-subtitle">Featured work, systems programming, and academic research.</p>
                 
                 <!-- Featured Projects -->
-                <div class="project-category">
-                    <h3 class="project-category-title">Featured</h3>
-                    <div id="featured-projects" class="projects-grid">
+                <div class="projects-group">
+                    <h3 class="projects-group-title">Featured</h3>
+                    <div class="projects-grid">
+                        <!-- Cura Hackathon -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-team">TEAM</span>
+                            </div>
+                            <h4 class="project-title">Cura AI Assistant</h4>
+                            <p class="project-summary">AI-powered healthcare chatbot for rapid diagnosis support. Won international hackathon for technical excellence.</p>
+                            <div class="project-tags">
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">React</span>
+                            </div>
+                            <div class="project-outcome">🏆 Winner — Hackathon Competition</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>My Role</h5>
+                                    <ul>
+                                        <li>Developed TypeScript module for AI response processing</li>
+                                        <li>Implemented natural language understanding layer</li>
+                                        <li>Led backend architecture discussions</li>
+                                    </ul>
+                                    <h5>Challenges & Outcomes</h5>
+                                    <ul>
+                                        <li>Handled 500+ medical inquiry patterns in 48 hours</li>
+                                        <li>Optimized response latency under 2 seconds</li>
+                                        <li>Collaborated across 4-person international team</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <span class="link-disabled">Code private</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Thesis -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-private">PRIVATE</span>
+                            </div>
+                            <h4 class="project-title">Big Data Analytics Thesis</h4>
+                            <p class="project-summary">Research prototype on large-scale data analysis and AI-driven decision support. Supervised by Dr. Prof. Loubna Ali.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">ML</span>
+                                <span class="tag">Research</span>
+                            </div>
+                            <div class="project-outcome">🔒 Private — Available on Request</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Thesis Topic</h5>
+                                    <p><em>"Evidence-Gated, Allergy-Aware Decision Support System for Scope-Defined Acute Add-on Medications"</em></p>
+                                    <h5>Technical Approach</h5>
+                                    <ul>
+                                        <li>Large-scale data processing with pandas, numpy</li>
+                                        <li>Machine learning models (scikit-learn, custom algorithms)</li>
+                                        <li>Data visualization and exploratory analysis</li>
+                                    </ul>
+                                    <h5>Interested?</h5>
+                                    <p>Contact me at al.chigvintseva@gmail.com to discuss the research.</p>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <span class="link-disabled">Code private</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- 42 Berlin Highlights -->
-                <div class="project-category">
-                    <h3 class="project-category-title">42 Berlin Fundamentals</h3>
-                    <div id="forty-two-highlights" class="projects-grid">
+                
+                <!-- Core Projects -->
+                <div class="projects-group">
+                    <h3 class="projects-group-title">Core Projects</h3>
+                    <div class="projects-grid">
+                        <!-- libft -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                            </div>
+                            <h4 class="project-title">libft</h4>
+                            <p class="project-summary">Custom C library with 40+ standard functions from scratch. Foundation for all subsequent 42 projects.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Systems</span>
+                            </div>
+                            <div class="project-outcome">✓ Complete</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Key Functions Implemented</h5>
+                                    <ul>
+                                        <li>String manipulation (strlen, strcpy, strdup, split)</li>
+                                        <li>Memory operations (memcpy, memmove, memset, calloc)</li>
+                                        <li>Linked list utilities and iterators</li>
+                                        <li>Character classification and conversion</li>
+                                    </ul>
+                                    <h5>What I Learned</h5>
+                                    <ul>
+                                        <li>Deep understanding of C fundamentals</li>
+                                        <li>Pointer arithmetic and memory management mastery</li>
+                                        <li>Function design and testing practices</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <!-- ft_printf -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                            </div>
+                            <h4 class="project-title">ft_printf</h4>
+                            <p class="project-summary">Full printf() recreation with format specifier handling, flags, width, and precision modifiers.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Advanced</span>
+                            </div>
+                            <div class="project-outcome">✓ Complete</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Implemented Features</h5>
+                                    <ul>
+                                        <li>All standard format specifiers (%d, %s, %x, %f, etc.)</li>
+                                        <li>Flag handling: -, +, 0, #, space</li>
+                                        <li>Width and precision modifiers with edge cases</li>
+                                        <li>Variable argument handling (va_list)</li>
+                                    </ul>
+                                    <h5>Technical Challenges</h5>
+                                    <ul>
+                                        <li>Buffer management for formatted output</li>
+                                        <li>Format string parsing and validation</li>
+                                        <li>Floating-point to string conversion precision</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <!-- push_swap -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                            </div>
+                            <h4 class="project-title">push_swap</h4>
+                            <p class="project-summary">Efficient sorting algorithm for two-stack data structure. Optimized with Turkish algorithm for minimal operations.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                            <div class="project-outcome">✓ Complete</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Algorithm Optimization</h5>
+                                    <ul>
+                                        <li>Implemented multiple sorting strategies (bubble, insertion, merge)</li>
+                                        <li>Turkish algorithm for near-optimal move count</li>
+                                        <li>Handles unsorted stacks with 100+ elements efficiently</li>
+                                    </ul>
+                                    <h5>Data Structure Design</h5>
+                                    <ul>
+                                        <li>Stack-based dual-container architecture</li>
+                                        <li>Efficient memory management (no array realloc)</li>
+                                        <li>Operation tracking and validation</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <!-- born2beroot -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                            </div>
+                            <h4 class="project-title">born2beroot</h4>
+                            <p class="project-summary">Complete server setup and configuration. Security hardening, monitoring scripts, and Linux system administration.</p>
+                            <div class="project-tags">
+                                <span class="tag">Linux</span>
+                                <span class="tag">Systems</span>
+                            </div>
+                            <div class="project-outcome">✓ Complete</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>System Administration</h5>
+                                    <ul>
+                                        <li>VirtualBox VM setup and Debian/CentOS configuration</li>
+                                        <li>User and group management with sudo hardening</li>
+                                        <li>SSH security, firewall rules (UFW), password policies</li>
+                                    </ul>
+                                    <h5>Monitoring & Security</h5>
+                                    <ul>
+                                        <li>Real-time system resource monitoring script</li>
+                                        <li>Log analysis and alerting mechanisms</li>
+                                        <li>Encryption implementation (LUKS, SSL)</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <span class="link-disabled">Private / Not public</span>
+                            </div>
+                        </div>
+                        
+                        <!-- minishell -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                                <span class="badge badge-team">TEAM</span>
+                                <span class="badge badge-in-progress">IN PROGRESS</span>
+                            </div>
+                            <h4 class="project-title">minishell</h4>
+                            <p class="project-summary">Custom Unix shell implementation with command parsing, piping, redirection, and built-in commands.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Unix</span>
+                            </div>
+                            <div class="project-outcome">🔄 In Progress</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Key Features</h5>
+                                    <ul>
+                                        <li>Shell parsing and tokenization (lexer + parser)</li>
+                                        <li>Pipe and redirection operators (|, >, >>, <)</li>
+                                        <li>Built-in commands: cd, export, unset, env, exit</li>
+                                        <li>Signal handling (Ctrl+C, Ctrl+D)</li>
+                                    </ul>
+                                    <h5>Learning Focus</h5>
+                                    <ul>
+                                        <li>Process forking and inter-process communication</li>
+                                        <li>File descriptor management and redirection</li>
+                                        <li>Parsing and command execution flow</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <span class="link-disabled">Private / Not public</span>
+                            </div>
+                        </div>
+                        
+                        <!-- so_long -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-42">42</span>
+                            </div>
+                            <h4 class="project-title">so_long</h4>
+                            <p class="project-summary">2D game with graphics, collision detection, sprite rendering, and enemy AI using MinilibX graphics library.</p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Graphics</span>
+                            </div>
+                            <div class="project-outcome">✓ Complete</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Game Features</h5>
+                                    <ul>
+                                        <li>Tile-based 2D map rendering with sprites</li>
+                                        <li>Player movement with WASD controls</li>
+                                        <li>Collision detection and boundary constraints</li>
+                                        <li>Enemy AI with patrol and chase mechanics</li>
+                                    </ul>
+                                    <h5>Technical Highlights</h5>
+                                    <ul>
+                                        <li>MinilibX graphics library integration</li>
+                                        <li>Real-time input handling and game loop</li>
+                                        <li>Frame rate optimization and memory management</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- All 42 Projects -->
-                <div class="project-category">
-                    <h3 class="project-category-title">All 42 Berlin Projects</h3>
-                    <div id="forty-two-all" class="expandable-section">
-                    </div>
-                </div>
-
-                <!-- Academic & Other -->
-                <div class="project-category">
-                    <h3 class="project-category-title">Academic & Other Projects</h3>
-                    <div id="academic-projects" class="projects-grid">
+                
+                <!-- Academic / Research -->
+                <div class="projects-group">
+                    <h3 class="projects-group-title">Academic & Research</h3>
+                    <div class="projects-grid">
+                        <!-- NYC Property -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-pending">PENDING</span>
+                            </div>
+                            <h4 class="project-title">NYC Property Analytics</h4>
+                            <p class="project-summary">Machine learning model predicting real estate prices from 50,000+ property listings. Published results pending.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">ML</span>
+                                <span class="tag">Data</span>
+                            </div>
+                            <div class="project-outcome">📰 Pending Publication</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Project Goals</h5>
+                                    <ul>
+                                        <li>Predict property prices from real estate dataset</li>
+                                        <li>Feature engineering: location, size, age, amenities</li>
+                                        <li>Model comparison: Linear Regression, Random Forest, Gradient Boosting</li>
+                                    </ul>
+                                    <h5>Technologies</h5>
+                                    <ul>
+                                        <li>pandas & numpy for data manipulation</li>
+                                        <li>scikit-learn for ML pipeline</li>
+                                        <li>matplotlib & seaborn for visualization</li>
+                                        <li>SQL for database queries</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Wine Quality -->
+                        <div class="project-card">
+                            <div class="project-badges">
+                                <span class="badge badge-pending">PENDING</span>
+                            </div>
+                            <h4 class="project-title">Wine Quality Classification</h4>
+                            <p class="project-summary">Comprehensive analysis and machine learning classification of wine quality dataset (5,000+ samples). Research paper under peer review.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Data Science</span>
+                                <span class="tag">ML</span>
+                            </div>
+                            <div class="project-outcome">📰 Pending Publication</div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Methodology</h5>
+                                    <ul>
+                                        <li>Exploratory data analysis: 5,000+ wine samples, 11 chemical features</li>
+                                        <li>Feature correlation analysis and selection</li>
+                                        <li>Multiple classifier evaluation (Random Forest, SVM, XGBoost)</li>
+                                    </ul>
+                                    <h5>Key Findings</h5>
+                                    <ul>
+                                        <li>Alcohol content and acidity as primary quality indicators</li>
+                                        <li>Ensemble methods outperform single classifiers</li>
+                                        <li>Research paper currently under peer review</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <a href="#" title="ADD LINK">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Work -->
+                        <div class="project-card">
+                            <h4 class="project-title">Additional Academic Work</h4>
+                            <p class="project-summary">C++ cosine similarity, simulation techniques, and data visualization projects. Available upon request.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Private</span>
+                            </div>
+                            <details class="project-details">
+                                <summary>View more</summary>
+                                <div class="details-content">
+                                    <h5>Includes</h5>
+                                    <ul>
+                                        <li>C++ vector operations and cosine similarity implementation</li>
+                                        <li>Monte Carlo simulation techniques for risk modeling</li>
+                                        <li>Advanced data visualization with Tableau and matplotlib</li>
+                                        <li>Custom statistical analysis tools</li>
+                                    </ul>
+                                    <h5>Contact</h5>
+                                    <p>Interested in details? Contact me at al.chigvintseva@gmail.com</p>
+                                </div>
+                            </details>
+                            <div class="project-links">
+                                <span class="link-disabled">Private / Not public</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === EDUCATION === -->
+        <!-- === EDUCATION SECTION === -->
         <section id="education" class="section">
             <div class="container">
                 <h2 class="section-title">Education</h2>
-                <div class="education-timeline">
-                    <!-- Rendered from content/projects.js -->
+                <div class="education-list">
+                    <!-- Main Education Entries -->
+                    <div class="education-entry">
+                        <h3 class="edu-degree">B.Sc. (Honours) in Computer Science and Digitization</h3>
+                        <p class="edu-institution">UCA, UK (in cooperation with BSBI, Berlin, Germany)</p>
+                        <p class="edu-meta">Feb 2023 – Feb 2026 (Expected Graduation) | 180 ECTS</p>
+                        <p class="edu-meta">Specialization: <strong>Big Data Analytics and AI</strong></p>
+                        <p class="edu-meta">GPA: 1.3 (German system) — First Class Honours | Top 5% of cohort | 98% attendance</p>
+                        <p class="edu-note"><em>Note: Thesis supervisor Dr. Prof. Loubna Ali. Expected highest achiever across all 2025/2026 undergraduate programs (Academic Registrar).</em></p>
+                    </div>
+                    
+                    <div class="education-entry">
+                        <h3 class="edu-degree">42 Software Engineering School</h3>
+                        <p class="edu-institution">42 Berlin, Germany</p>
+                        <p class="edu-meta">May 2025 – In Progress | Level 3.23/21</p>
+                        <p class="edu-meta">Non-profit educational project (École 42 network); project-based learning curriculum.</p>
+                        <p class="edu-meta"><strong>Student Council Member</strong> (elected, October 2025)</p>
+                        <p class="edu-description">
+                            <strong>Core Curriculum:</strong> C/C++, Unix systems programming, algorithms & data structures, memory management, graphics programming, unit testing, networking & system administration.
+                        </p>
+                    </div>
+                    
+                    <!-- Toggle for More Education -->
+                    <details class="education-more">
+                        <summary class="education-toggle">+ More Education</summary>
+                        <div class="education-details">
+                            <div class="education-entry">
+                                <h3 class="edu-degree">International Foundation Programme</h3>
+                                <p class="edu-institution">Tianjin University, China (Online)</p>
+                                <p class="edu-meta">Sep 2022 – Jan 2023</p>
+                            </div>
+                            
+                            <div class="education-entry">
+                                <h3 class="edu-degree">International Baccalaureate Diploma Programme (Bilingual Diploma)</h3>
+                                <p class="edu-institution">IBO, Geneva, Switzerland</p>
+                                <p class="edu-meta">Sep 2020 – July 2022 | Final Score: 34 points</p>
+                                <p class="edu-meta">Mathematics Analysis & Approaches: Grade 7 (highest)</p>
+                                <p class="edu-description">Relevant subjects: Biology, Psychology, Mathematics AA.</p>
+                            </div>
+                            
+                            <div class="education-entry">
+                                <h3 class="edu-degree">Secondary Education Certificate with Distinction (Attestat)</h3>
+                                <p class="edu-institution">Lyceum 10 (affiliated with HSE University), Perm, Russia</p>
+                                <p class="edu-meta">Sep 2020 – June 2022 | Simultaneous with IB Diploma</p>
+                                <p class="edu-meta">GPA: 1.0 (German system), 5.0/5.0 (Russian scale)</p>
+                                <p class="edu-description">Specialization: Physics & Information Technology.</p>
+                            </div>
+                            
+                            <div class="education-entry">
+                                <h3 class="edu-degree">University Prep Certificate Programme: Computer Science</h3>
+                                <p class="edu-institution">Perm State University (PSU), Perm, Russia</p>
+                                <p class="edu-meta">Sep 2019 – May 2021 | Grade: 1.2 (German), 4.8/5.0 (Russian)</p>
+                                <p class="edu-description"><strong>Topics:</strong> CS Fundamentals, Assembler, Pascal, HTML + CSS, Python.</p>
+                            </div>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
 
-        <!-- === LANGUAGES === -->
+        <!-- === LANGUAGES SECTION === -->
         <section id="languages" class="section">
             <div class="container">
                 <h2 class="section-title">Languages</h2>
-                <div id="languages-container" class="languages-grid">
+                <div class="languages-list">
+                    <div class="language-item">
+                        <span class="language-flag">🇬🇧</span>
+                        <div class="language-info">
+                            <strong>English</strong>
+                            <p>Native / Bilingual (C2)</p>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-flag">🇷🇺</span>
+                        <div class="language-info">
+                            <strong>Russian</strong>
+                            <p>Native / Bilingual (C2)</p>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-flag">🇩🇪</span>
+                        <div class="language-info">
+                            <strong>German</strong>
+                            <p>Independent User (B2)</p>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-flag">🇨🇳</span>
+                        <div class="language-info">
+                            <strong>Mandarin Chinese</strong>
+                            <p>Elementary (A1)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- === SOFT SKILLS === -->
+        <!-- === SOFT SKILLS SECTION === -->
         <section id="soft-skills" class="section">
             <div class="container">
                 <h2 class="section-title">Soft Skills</h2>
-                <div id="soft-skills-container" class="soft-skills-grid">
+                <div class="soft-skills-rail">
+                    <div class="soft-skills-track">
+                        <div class="soft-skill-chip">Communication</div>
+                        <div class="soft-skill-chip">Critical Thinking</div>
+                        <div class="soft-skill-chip">Teamwork</div>
+                        <div class="soft-skill-chip">Leadership</div>
+                        <div class="soft-skill-chip">Problem-Solving</div>
+                        <div class="soft-skill-chip">Adaptability</div>
+                        <div class="soft-skill-chip">Time Management</div>
+                        
+                        <!-- Duplicate for seamless loop -->
+                        <div class="soft-skill-chip">Communication</div>
+                        <div class="soft-skill-chip">Critical Thinking</div>
+                        <div class="soft-skill-chip">Teamwork</div>
+                        <div class="soft-skill-chip">Leadership</div>
+                        <div class="soft-skill-chip">Problem-Solving</div>
+                        <div class="soft-skill-chip">Adaptability</div>
+                        <div class="soft-skill-chip">Time Management</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- === ACHIEVEMENTS === -->
-        <section id="achievements" class="section">
-            <div class="container">
-                <h2 class="section-title">Achievements</h2>
-                <div id="achievements-container" class="achievements-list">
-                </div>
-            </div>
-        </section>
-
-        <!-- === CONTACT === -->
+        <!-- === CONTACT SECTION === -->
         <section id="contact" class="section section-contact">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-text">Let's build something great together.</p>
-                <div class="contact-links">
-                    <a href="mailto:al.chigvintseva@gmail.com" class="btn btn-primary">Send Email</a>
-                    <a href="https://linkedin.com/in/alena-chigvintseva" class="btn btn-secondary">LinkedIn</a>
-                    <a href="https://github.com/chigvintseva" class="btn btn-secondary">GitHub</a>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">I'm always happy to discuss software engineering, big data, or exciting new projects.</p>
+                
+                <div class="contact-content">
+                    <div class="contact-email">
+                        <p class="contact-label">Send me an email</p>
+                        <a href="mailto:al.chigvintseva@gmail.com" class="email-link">
+                            <span class="email-icon">✉</span>
+                            al.chigvintseva@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="contact-socials">
+                        <p class="contact-label">Or connect on social</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub" title="ADD LINK">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn" title="ADD LINK">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.424-.103.25-.129.599-.129.949v5.432h-3.554s.05-8.81 0-9.728h3.554v1.375c.427-.66 1.19-1.599 2.898-1.599 2.117 0 3.704 1.385 3.704 4.362v5.59zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.708 0-.956.768-1.71 1.963-1.71 1.192 0 1.914.756 1.939 1.71 0 .95-.746 1.708-1.987 1.708zm-1.65 11.597h3.299V9.579H3.687v10.873zM22.224 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.002z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -158,12 +764,9 @@
 
     <!-- === FOOTER === -->
     <footer class="footer">
-        <p>Built with vanilla HTML, CSS, JavaScript. Last updated: Feb 2026</p>
+        <p>© 2026 Alena Chigvintseva. Built with vanilla HTML, CSS, and JavaScript.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="content/projects.js"></script>
-    <script src="content/skills.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
