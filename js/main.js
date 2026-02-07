@@ -1,8 +1,18 @@
 /* ===================================================
    PREMIUM PORTFOLIO JAVASCRIPT
    Mobile Navigation | Active Section Highlight
-   Smooth Interactions | Accessibility
+   Smooth Interactions | Accessibility | Mouse Tracking
    ================================================== */
+
+// === MOUSE CURSOR TRACKING GRADIENT ===
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    
+    // Create a subtle gradient circle effect
+    const gradient = `radial-gradient(circle 500px at ${x}px ${y}px, rgba(183, 28, 53, 0.08), transparent 80%)`;
+    document.documentElement.style.background = gradient;
+});
 
 // === MOBILE MENU HANDLER ===
 document.addEventListener('DOMContentLoaded', () => {
