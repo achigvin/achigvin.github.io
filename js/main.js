@@ -164,3 +164,98 @@ if ('requestIdleCallback' in window) {
         });
     }, 2000);
 }
+
+// === PROJECT FILTERING FUNCTION ===
+function setupProjectFiltering() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('filter-btn-active'));
+            button.classList.add('filter-btn-active');
+            
+            // Filter projects
+            projectCards.forEach(card => {
+                const cardFilters = card.getAttribute('data-filter')?.split(' ') || [];
+                
+                if (filterValue === 'all' || cardFilters.includes(filterValue)) {
+                    card.style.display = '';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        });
+    });
+    
+    // Set "All" as default active
+    const allButton = document.querySelector('[data-filter="all"]');
+    if (allButton) allButton.classList.add('filter-btn-active');
+}
+
+// === PROJECT MODAL SYSTEM ===
+function setupProjectModals() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Extract project data from card
+            const title = card.querySelector('.project-title')?.textContent || 'Project';
+            const description = card.querySelector('.project-description')?.innerHTML || '';
+            const badges = card.querySelector('.project-badges')?.innerHTML || '';
+            const links = card.querySelector('.project-links')?.innerHTML || '';
+            
+            showProjectModal(title, description, badges, links);
+        });
+    });
+}
+
+// Show modal with project details
+function showProjectModal(title, description, badges, links) {
+    let modal = document.getElementById('project-modal');
+    
+    if (!modal) {
+        // Create modal if it doesn't exist
+        modal = document.createElement('div');
+        modal.id = 'project-modal';
+        modal.className = 'project-modal';
+        document.body.appendChild(modal);
+    }
+    
+    // Populate modal content
+    const content = `
+        <div class="project-modal-content" style="position: relative;">
+            <button class="project-modal-close" onclick="document.getElementById('project-modal').classList.remove('active')">✕</button>
+            <h2 style="margin-top: 0; color: var(--color-accent);">${title}</h2>
+            <div class="project-badges" style="margin-bottom: var(--space-6);">
+                ${badges}
+            </div>
+            <div style="line-height: 1.8; color: var(--color-text);">
+                ${description}
+            </div>
+            ${links ? `<div class="project-links" style="margin-top: var(--space-6);">${links}</div>` : ''}
+        </div>
+    `;
+    
+    modal.innerHTML = content;
+    modal.classList.add('active');
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });
+}

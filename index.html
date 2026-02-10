@@ -267,10 +267,22 @@
         <section id="projects" class="section section-projects">
             <div class="container">
                 <h2 class="section-title">💻 Projects</h2>
-                <p class="section-subtitle">Featured work, systems programming, and academic research.</p>
+                <p class="section-subtitle">All projects — sortable by type, technology, and experience level.</p>
+                
+                <!-- Filter Controls -->
+                <div class="projects-filter-bar">
+                    <button class="filter-btn filter-btn-active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="featured">Featured</button>
+                    <button class="filter-btn" data-filter="42">42 School</button>
+                    <button class="filter-btn" data-filter="university">University</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="projects-grid-compact">
                 
                 <!-- Featured Projects -->
-                <div class="projects-group">
+                <div class="projects-group" style="display: none;">
                     <h3 class="projects-group-title">Featured</h3>
                     <div class="projects-grid">
                         <!-- Cura Hackathon -->
@@ -1043,6 +1055,8 @@
                         </div>
                     </div>
                 </div>
+                
+                </div> <!-- End projects-grid-compact -->
             </div>
         </section>
 

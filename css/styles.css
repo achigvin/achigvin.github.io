@@ -675,6 +675,7 @@ a {
 /* === PROJECTS SECTION === */
 .projects-group {
     margin-bottom: var(--space-20);
+    display: contents; /* Remove from layout but keep children */
 }
 
 .projects-group-title {
@@ -683,12 +684,11 @@ a {
     margin-bottom: var(--space-12);
     padding-bottom: var(--space-6);
     border-bottom: 2px solid var(--color-accent);
+    display: none; /* Hide old group titles */
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-8);
+    display: contents; /* Remove from layout but keep children */
 }
 
 .project-card {
