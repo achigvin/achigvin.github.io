@@ -508,13 +508,15 @@ a {
 .btn-primary:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    transition-duration: 0.3s;
     box-shadow: var(--glow);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--color-accent);
+    transition-duration: 0.3s;
     border-color: var(--color-accent);
 }
 
