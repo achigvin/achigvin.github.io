@@ -5,7 +5,7 @@ Currently a Master's student at TU Darmstadt, Germany 🗺️
 
 ---
 
-I built <a href="https://achigvin.github.io/personal_website/" target="_blank">this portfolio website</a> 
+I built <a href="https://achigvin.github.io" target="_blank">this portfolio website</a> 
 to have one place that actually reflects what I do and how I think.  
 No fancy templates, no builders: just HTML, CSS, and a lot of tweaking.
 
