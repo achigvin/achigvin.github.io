@@ -1,5 +1,30 @@
-# ignore ALL .log files
-*.log
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# ignore ALL files in ANY directory named temp
-temp/
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log
+
+# Dependencies
+node_modules/
+.env
+
+# Build outputs
+dist/
+build/
+
+# Old files (backup)
+*.bak
+*.old
+index.html.bak
+
+# Images (old directory)
+images&resume/
