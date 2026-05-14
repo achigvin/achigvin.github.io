@@ -1336,6 +1336,25 @@ button:focus-visible {
         gap: var(--space-8);
         padding: var(--space-4);
     }
+
+    .hero-right {
+        display: none;
+    }
+
+    .hero-highlights {
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+        padding-top: var(--space-6);
+    }
+
+    .highlight-item {
+        width: 90px;
+    }
+
+    .hero-socials {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
     
     .hero-image {
         display: none;
@@ -1375,6 +1394,27 @@ button:focus-visible {
 }
 
 @media (max-width: 640px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        padding: var(--space-4);
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .hero-highlights {
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+        padding-top: var(--space-6);
+    }
+    
+    .hero-socials {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
     .hero-title {
         font-size: var(--font-size-xl);
         margin-bottom: var(--space-2);
