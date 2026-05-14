@@ -383,25 +383,29 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-size: 48px;
     width: 48px;
     height: 48px;
-    border: 2px solid var(--color-border);
-    border-radius: 50%;
+    border: none;
+    overflow: visible;
     cursor: pointer;
     transition: var(--transition);
     color: var(--color-text-muted);
+    text-decoration: none;
 }
 
-.social-icon-btn-small.github-btn:hover {
-    color: #ff0000;
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+.social-icon-btn-small i {
+    display: block;
+    line-height: 1;
 }
 
-.social-icon-btn-small.linkedin-btn:hover {
-    color: #ff0000;
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+.social-icon-btn-small.github-btn:hover,
+.social-icon-btn-small.linkedin-btn:hover,
+.social-icon-btn-small.telegram-btn:hover {
+    color: #B71C35;
+    transform: translateY(-7px);
+    transition-duration: 0.5s;
+    box-shadow: none;
 }
 
 .hero-cta {

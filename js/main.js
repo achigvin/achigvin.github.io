@@ -108,6 +108,21 @@ document.querySelectorAll('details summary').forEach(summary => {
     });
 });
 
+// === EDUCATION TOGGLE TEXT CHANGE ===
+const educationDetails = document.querySelector('.education-more');
+if (educationDetails) {
+    const educationToggle = educationDetails.querySelector('.education-toggle');
+    const originalText = educationToggle.textContent.trim();
+    
+    educationDetails.addEventListener('toggle', () => {
+        if (educationDetails.open) {
+            educationToggle.textContent = originalText.replace('+', '-');
+        } else {
+            educationToggle.textContent = originalText;
+        }
+    });
+}
+
 // === LAZY LOADING FOR IMAGES ===
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries) => {
